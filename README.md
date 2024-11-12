@@ -15,7 +15,7 @@
 
 この記事では従来からある枯れた技術である画像処理（Contour Detection with Area Filtering）を扱い、次の記事でAIによる技術（DAMO-YOLO）を実装・検証します。
 
-![](assets/eye-catch.png)
+![](https://raw.githubusercontent.com/yKesamaru/Motion_Detection/refs/heads/master/assets/eye-catch.png)
 
 ## 動作環境
 ```bash
@@ -244,18 +244,28 @@ if __name__ == "__main__":
 ```
 
 ### 解説
-![](assets/region.png)
+![](https://raw.githubusercontent.com/yKesamaru/Motion_Detection/refs/heads/master/assets/region.png)
 
 ピンクに網掛けをしてある部分が感知指定領域です。
-また感度調節のため、面積の10％を指定しています。
+また感度調節のため、面積の10%を指定しています。
 
 ## 出力結果
+
 <video controls width="600">
-  <source src="assets/output.mp4" type="video/mp4">
+  <source src="https://github.com/yKesamaru/Motion_Detection/raw/refs/heads/master/assets/output.mp4" type="video/mp4">
   Your browser does not support the video tag.
 </video>
 
-※ ブザー音が鳴ります。
+※ ブザー音が鳴ります。音量に注意してください。
+
+## さいごに
+この記事ではAIを使わず**従来の画像処理を使って動体検知を行い**、検知した場合にブザーが鳴るようにしました。
+
+実際の防犯カメラの動画を使いました。この際、光量が変化するとこれを検知してしまいます。感度設定しているためカメラに小動物などが映り込んでも誤検知はしませんが、検知設定範囲全体の光量が変化すると、それを「動体」としてしまいます。
+
+このような誤検知を防止するには複数の画像処理を行うか、AIを用いる必要があります。
+
+以上です。ありがとうございました。
 
 
 
